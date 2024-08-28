@@ -1,0 +1,318 @@
+*{
+    margin: 0;
+    padding: 0;
+   
+
+}
+body{
+    font-family: "Poppins", sans-serif;
+    background-color: #e2e1e1; 
+
+}
+
+/* .hero_section{
+    background: url('/images/bg_hero.webp') no-repeat center center;
+    background-size:cover; 
+    width: 100vw;
+    height: 100vh;
+} */
+.hero_section {
+    position: relative;
+    background: url('/images/bg_hero.webp') no-repeat center center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Prevents overflow issues from the pseudo-element */
+}
+
+.hero_section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%; /* Adjust this to control the height of the blurred area */
+    background: linear-gradient(to bottom, rgba(240, 240, 240, 0) 0%, rgba(240, 240, 240, 1) 100%);
+    filter: blur(15px); /* Apply blur effect */
+    pointer-events: none; /* Prevent interaction */
+    z-index: 1;}
+    
+.hero_section_logo h1{
+    font-size: 42px;
+    text-transform: uppercase;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 40px;
+}
+
+
+.hero_section_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+}
+.hero_section_content_loader{
+    display: flex;
+
+}
+.loader {
+    width: 8px;
+    height: 8px;
+    border-radius: 20px; /* Make the loader a perfect circle */
+    background: #e74646;
+    box-shadow: 0 0 0 #eea9a9; /* Adjust the shadow to have a diameter of 10px */
+    animation: l1 1s infinite;
+    margin-right: 20px;
+    margin-top: 8px;
+}
+
+@keyframes l1 {
+    0% {
+        box-shadow: 0 0 0 0 #eea9a9;
+    }
+   
+    100% {
+        box-shadow: 0 0 0 5px #eea9a9;
+    }
+}
+.hero_section_content .hero_section_content_title{
+    font-weight: 500;
+}
+
+.hero_section_content .hero_section_content_para{
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 16px;
+}
+
+.btn_container{
+    margin-top: 28px;
+}
+
+.btn_container .btn{
+    font-size: 12px;
+    padding: 16px;
+    border-radius: 30px;
+    border:  1px solid rgb(187, 187, 187);
+    font-weight: 600;
+    margin: 0px 5px;
+}
+
+.btn_container button:nth-child(1){
+    background-color: rgb(226, 226, 226);
+    transition: 0.3s all ease;
+    cursor: pointer;
+}
+.btn_container button:nth-child(2){
+    background-color: rgb(29, 29, 31);
+    color: white;
+    transition: 0.3s all ease;
+    cursor: pointer;
+}
+
+
+.btn_container button:nth-child(1):hover{
+    transform: scale(1.1);
+}
+
+.btn_container button:nth-child(2):hover{
+    transform: scale(1.1);
+}
+.video_section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.video_section iframe{
+    width: 100%;
+    height: 100vh;
+
+}
+
+.content_section{
+    height: 200vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.content_section p{
+    width: 75%;
+    height: 100%;
+    font-size: 30px;
+    font-weight: 500;
+    
+}
+/* .cards_section{
+    height: 400vh;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: auto auto ;
+    background-color: aqua;
+           
+
+    
+}
+.card1 ,.card2, .card3, .card4, .card5, .card6  {
+    height: 600px;
+    width: 500px;
+    border: 2px solid;
+
+
+} */
+.card_container {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    column-gap: 20px;
+    /* row-gap: 150px; */
+    padding: 50px;
+  
+  }
+  
+  .card {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    /* text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    border:none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.5s; */
+    height: 90vh;
+    width:40vw;
+    overflow: hidden;
+    position: relative;
+    border-radius: 20px;
+
+  }
+  .card>div{
+        /* background-color: rgba(255, 255, 255, 0.8); */
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+        border:none;
+        height: 100%;
+        width:100%;
+        border-radius: 20px;
+        cursor: pointer;
+        background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 1s;
+  }
+
+  .card1{
+    background: url(../IMAGES/card1.jpeg);
+  }
+  .card2{
+    background: url(../IMAGES/card2.jpeg);
+  }
+  .card3{
+    background: url(../IMAGES/card3.jpeg);
+  }
+  .card4{
+    background: url(../IMAGES/card4.jpeg);
+  }
+  .card>div:hover{
+    transform: scale(1.1);
+  }
+  .card_name{
+    height: 100px;
+    width: 40vw;
+    margin-top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+    .name{
+        margin-top: -30px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    .path{
+        margin-top: -30px;
+        cursor: pointer;
+        color: rgb(158, 158, 158);
+        font-weight: 500;
+    }
+    .path:hover{
+        color: black;
+    }
+    .banner{
+        background-color: rgb(216, 213, 213);
+        height: 150vh;
+        width: 100%;
+    }
+    
+    .banner_logo {
+        display: flex;
+        justify-content: center;
+    }
+    .banner_logo img{
+        height: 140px;
+        border-radius: 35px;
+        transform: rotate(15deg);
+        margin-top: 30px;
+        box-shadow: -30px 40px 50px rgba(0, 0, 0, 0.514); 
+    }
+    .banner_content{
+        display: flex;
+    }
+    .banner_content_title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: -150px;
+        width: 50vw;
+    }
+    .banner_content_title h1{
+        font-size: 180px;
+        color: rgb(151, 151, 151);
+        font-weight: 500; 
+        height: 180px;
+    }
+    .banner_content_title h2{
+        font-size: 180px;
+        color: black;
+        font-weight: 500;
+        height: 180px;
+        margin: -50px 0 0 200px;
+    }
+    .banner_content_img {
+        width: 50vw;
+        height: 100vh;
+        display: flex;
+        justify-content: right;
+        overflow: hidden;
+        margin-top: 200px;
+    }
+    .banner_content_img img{
+        height: 500px;
+        border-radius: 30px;
+        margin-right: -350px;
+        box-shadow: -30px 40px 50px rgba(0, 0, 0, 0.404); 
+
+
+    }
+    .banner_content_title_list{
+        margin-top: 100px;
+    }
+    .list_container {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr); /* Create two equal-width columns */
+        list-style-type: none; /* Remove default list styling */
+        padding: 0;
+        margin: 0;
+    }
+
+    .list_item {
+        padding: 10px; /* Padding inside list items */
+        border-radius: 5px; /* Rounded corners */
+    }
